@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#173f35">
+<title>攤智通｜AI攤商行銷助手 V1.0</title>
+<style>
+:root{--green:#C62828;--mint:#FFF3D6;--orange:#EF7625;--ink:#30231F;--muted:#75645D;--line:#F0DCCB;--bg:#FFF9F1}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Noto Sans TC",sans-serif}
+header{background:var(--green);color:white;padding:16px max(18px,calc((100vw - 1120px)/2));display:flex;align-items:center;justify-content:space-between;gap:12px;position:sticky;top:0;z-index:5}
+.brand{font-weight:850;font-size:21px;letter-spacing:1px}.brand small{display:block;font-size:11px;font-weight:500;opacity:.8;letter-spacing:.5px}
+.pill{font-size:12px;border:1px solid #ffffff55;border-radius:99px;padding:6px 10px}
+.layout{max-width:1120px;margin:22px auto;padding:0 16px;display:grid;grid-template-columns:230px 1fr;gap:20px}
+nav,.panel,.hero,.stat{background:white;border:1px solid var(--line);border-radius:17px}
+nav{padding:12px;height:max-content;position:sticky;top:82px}
+nav button{display:flex;width:100%;text-align:left;align-items:center;gap:10px;padding:12px;border:0;background:transparent;border-radius:10px;color:var(--ink);font-size:14px;cursor:pointer}
+nav button.active,nav button:hover{background:var(--mint);color:var(--green);font-weight:750}
+main{min-width:0}.hero{padding:24px;background:linear-gradient(120deg,#FFF0C2,#FFF9F1);margin-bottom:16px}
+.hero h1{font-size:26px;margin:0 0 8px;color:var(--green)}.hero p{margin:0;color:#53645c;line-height:1.7}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:16px}.stat{padding:15px}.stat span{font-size:12px;color:var(--muted)}.stat strong{display:block;font-size:25px;margin-top:4px;color:var(--green)}
+.panel{padding:20px;margin-bottom:16px}.panel h2{font-size:18px;margin:0 0 14px}.panel h3{font-size:15px;margin:16px 0 8px}
+label{font-size:13px;font-weight:700;display:block;margin:12px 0 6px}
+input,textarea,select{width:100%;border:1px solid #d6dfd9;border-radius:10px;padding:11px;font:inherit;background:white;color:var(--ink)}
+textarea{min-height:85px;resize:vertical}
+button.primary,.secondary{border:0;border-radius:10px;padding:11px 16px;font-weight:750;cursor:pointer;margin-top:12px}
+.primary{background:var(--green);color:white}.secondary{background:var(--mint);color:var(--green);border:1px solid #cfe0d5}
+.result{background:#f7faf8;border:1px dashed #b8c9be;border-radius:12px;padding:14px;white-space:pre-wrap;line-height:1.7;min-height:70px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.muted{font-size:12px;color:var(--muted);line-height:1.6}.tag{display:inline-block;background:#fff0dc;color:#8a4c10;border-radius:99px;padding:4px 9px;font-size:11px;margin:3px}
+.cardgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.feature{border:1px solid var(--line);border-radius:13px;padding:15px}.feature b{color:var(--green)}.hidden{display:none!important}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+@media(max-width:720px){.layout{display:block;margin:12px auto}nav{position:static;display:flex;overflow:auto;gap:4px;margin-bottom:14px;padding:7px}nav button{white-space:nowrap;width:auto;padding:9px 11px}.stats{gap:8px}.stat{padding:11px}.stat strong{font-size:20px}.hero{padding:19px}.hero h1{font-size:23px}.grid2,.cardgrid{grid-template-columns:1fr}header{padding:13px 16px}}
+</style>
+
+<meta name="description" content="攤智通是專為夜市攤商打造的 AI 行銷助手，協助整理商品特色、產生行銷文案、社群貼文與短影音腳本，讓每一攤都有自己的行銷力！">
+<meta name="keywords" content="攤智通,夜市攤商,AI行銷,商品文案,社群貼文,短影音腳本,攤商行銷">
+<meta name="author" content="攤智通">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://YOUR-SITE-URL/">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:site_name" content="攤智通｜AI 攤商行銷助手">
+<meta property="og:title" content="攤智通｜AI 攤商行銷助手">
+<meta property="og:description" content="讓每一攤，都有自己的行銷力！夜市攤商的 AI 行銷小幫手。">
+<meta property="og:image" content="https://YOUR-SITE-URL/images/og-image.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="攤智通｜AI 攤商行銷助手">
+<meta name="twitter:description" content="讓每一攤，都有自己的行銷力！">
+<meta name="twitter:image" content="https://YOUR-SITE-URL/images/og-image.png">
+
+</head>
+<body>
+<header><div class="brand"><img src="/images/logo.png" alt="攤智通 Logo" style="width:42px;height:42px;object-fit:contain;vertical-align:middle;margin-right:8px">攤智通 <small>AI 攤商行銷助手｜V1.0</small></div><div class="pill">展示測試版・模擬資料</div></header>
+<div class="layout">
+<nav aria-label="主選單">
+<button class="active" data-page="home">🏠 營運總覽</button>
+<button data-page="copy">✍️ AI文案生成</button>
+<button data-page="poster">🎨 宣傳素材企劃</button>
+<button data-page="social">📱 社群貼文</button>
+<button data-page="video">🎬 短影音腳本</button>
+<button data-page="advisor">💡 行銷顧問</button>
+<button data-page="profile">🏪 我的攤位</button>
+</nav>
+<main>
+<section id="home" class="page">
+<div class="hero"><h1>讓每一攤，都有自己的行銷力！</h1><p>攤智通協助夜市攤商快速整理商品特色、產出行銷文案與宣傳內容。以下為可操作的前端展示，生成內容為情境模擬，尚未串接正式 AI 服務。</p><span class="tag">一攤一 AI，行銷更精彩！</span><span class="tag">手機／桌機響應式</span></div>
+<div class="stats"><div class="stat"><span>示範攤位</span><strong>01</strong></div><div class="stat"><span>行銷工具</span><strong>5 項</strong></div><div class="stat"><span>系統版本</span><strong>V1.0</strong></div></div>
+<div class="panel"><h2>快速開始</h2><div class="cardgrid">
+<div class="feature"><b>✍️ 產生商品文案</b><p class="muted">輸入商品名稱與特色，建立吸引顧客的介紹文案。</p><button class="secondary" onclick="go('copy')">開始使用</button></div>
+<div class="feature"><b>📱 社群貼文</b><p class="muted">快速整理 Facebook／Instagram 宣傳內容。</p><button class="secondary" onclick="go('social')">開始使用</button></div>
+<div class="feature"><b>🎬 短影音腳本</b><p class="muted">產生 15 至 30 秒短影音分鏡構想。</p><button class="secondary" onclick="go('video')">開始使用</button></div>
+<div class="feature"><b>💡 行銷顧問</b><p class="muted">依攤位情境取得行銷建議方向。</p><button class="secondary" onclick="go('advisor')">開始使用</button></div>
+</div></div>
+<div class="panel"><h2>使用流程</h2><p>① 建立攤位資料　→　② 選擇行銷工具　→　③ 輸入商品資訊　→　④ 產生展示內容　→　⑤ 複製並自行確認後使用</p><p class="muted">本原型不會儲存個人資料；重新整理頁面後，輸入內容可能消失。</p></div>
+</section>
+<section id="copy" class="page hidden"><div class="panel"><h2>✍️ AI 商品文案生成</h2><p class="muted">填寫商品資訊後，按下生成。此展示版依輸入內容套用範例模板。</p>
+<label>商品名稱</label><input id="product" value="酥炸雞排" placeholder="例如：酥炸雞排">
+<label>商品特色</label><textarea id="features">現點現炸、外酥內嫩、份量十足</textarea>
+<label>目標客群</label><select id="audience"><option>夜市逛街民眾</option><option>親子家庭</option><option>年輕族群</option><option>上班族</option></select>
+<label>文案風格</label><select id="tone"><option>活潑熱鬧</option><option>親切自然</option><option>美食誘人</option><option>簡潔有力</option></select>
+<button class="primary" onclick="makeCopy()">產生商品文案</button><h3>生成結果</h3><div id="copyOut" class="result">尚未產生內容。</div><button class="secondary" onclick="copyText('copyOut')">複製文案</button></div></section>
+<section id="poster" class="page hidden"><div class="panel"><h2>🎨 宣傳素材企劃</h2><p class="muted">協助整理海報需求與主視覺文案；本版先產出可交付設計的文字企劃，不直接生成圖片。</p>
+<label>活動／促銷主題</label><input id="event" value="週末夜市限定優惠">
+<label>優惠內容</label><input id="offer" value="任選兩份優惠價 150 元">
+<label>活動日期或期間</label><input id="period" value="本週五至週日">
+<label>希望強調的特色</label><textarea id="posterFeature">限量供應、現點現做</textarea>
+<button class="primary" onclick="makePoster()">整理海報文案</button><h3>海報文字企劃</h3><div id="posterOut" class="result">尚未產生內容。</div><button class="secondary" onclick="copyText('posterOut')">複製企劃</button></div></section>
+<section id="social" class="page hidden"><div class="panel"><h2>📱 社群貼文助手</h2>
+<label>貼文平台</label><select id="platform"><option>Facebook</option><option>Instagram</option><option>LINE 群組</option></select>
+<label>本次宣傳內容</label><textarea id="socialTopic">週末新品上市，招牌酥炸雞排限時優惠</textarea>
+<label>希望顧客採取的行動</label><input id="cta" value="歡迎到攤位品嚐">
+<button class="primary" onclick="makeSocial()">產生社群貼文</button><h3>貼文結果</h3><div id="socialOut" class="result">尚未產生內容。</div><button class="secondary" onclick="copyText('socialOut')">複製貼文</button></div></section>
+<section id="video" class="page hidden"><div class="panel"><h2>🎬 短影音腳本助手</h2>
+<label>影片主題</label><input id="videoTopic" value="招牌酥炸雞排製作過程">
+<label>影片長度</label><select id="duration"><option>15 秒</option><option>30 秒</option><option>45 秒</option></select>
+<label>影片風格</label><select id="videoStyle"><option>熱鬧有節奏</option><option>美食特寫</option><option>攤主介紹</option></select>
+<button class="primary" onclick="makeVideo()">產生分鏡腳本</button><h3>腳本結果</h3><div id="videoOut" class="result">尚未產生內容。</div><button class="secondary" onclick="copyText('videoOut')">複製腳本</button></div></section>
+<section id="advisor" class="page hidden"><div class="panel"><h2>💡 行銷顧問問答</h2>
+<label>目前遇到的行銷問題</label><textarea id="question" placeholder="例如：平日客人比較少，如何增加來客？">平日客人比較少，如何增加來客？</textarea>
+<label>攤位類型</label><select id="shopType"><option>夜市小吃</option><option>飲料甜品</option><option>服飾雜貨</option><option>遊戲娛樂</option><option>其他</option></select>
+<button class="primary" onclick="makeAdvice()">取得行銷建議</button><h3>建議方向</h3><div id="adviceOut" class="result">尚未產生內容。</div><p class="muted">提醒：此為示範性建議，實際執行前請依成本、法規及攤位現況評估。</p></div></section>
+<section id="profile" class="page hidden"><div class="panel"><h2>🏪 我的攤位資料</h2>
+<label>攤位名稱</label><input id="shopName" value="好味道炸物">
+<label>攤主／聯絡人</label><input id="owner" value="王老闆">
+<label>所在夜市</label><input id="market" value="大甲蔣公路觀光夜市">
+<label>主要商品</label><input id="mainProduct" value="酥炸雞排、甜不辣、薯條">
+<label>營業特色</label><textarea id="shopFeature">現點現炸、每日新鮮備料</textarea>
+<button class="primary" onclick="saveProfile()">儲存本頁展示資料</button><div id="profileMsg" class="muted" aria-live="polite"></div></div>
+<div class="panel"><h2>方案展示</h2><div class="grid2"><div class="feature"><b>免費體驗版</b><h3>NT$0</h3><p class="muted">基本文案模板與行銷工具展示。</p></div><div class="feature"><b>進階方案（規劃中）</b><h3>NT$299／月</h3><p class="muted">企劃預計提供更多進階功能；目前尚未開通付款及會員權限。</p></div></div></div></section>
+</main></div><footer>攤智通 V1.0｜讓每一攤，都有自己的行銷力！｜前端展示原型</footer>
+<script>
+function go(id){document.querySelectorAll('.page').forEach(x=>x.classList.add('hidden'));document.getElementById(id).classList.remove('hidden');document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('active',x.dataset.page===id));window.scrollTo({top:0,behavior:'smooth'})}
+document.querySelectorAll('nav button').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+function val(id){return document.getElementById(id).value.trim()}
+function put(id,t){document.getElementById(id).textContent=t}
+function makeCopy(){let p=val('product')||'人氣商品',f=val('features'),a=val('audience'),t=val('tone');put('copyOut',`🔥 ${p}，就是要趁熱吃！\n${f}。\n不論是${a}，逛夜市時都別錯過這份美味！\n${t==='活潑熱鬧'?'快揪朋友一起來，吃好吃滿！':'歡迎來攤位，感受現做的好滋味！'}\n📍 大甲蔣公路觀光夜市\n#攤智通示範文案 #夜市美食`)}
+function makePoster(){put('posterOut',`【主標題】${val('event')}\n【優惠焦點】${val('offer')}\n【活動期間】${val('period')}\n【特色補充】${val('posterFeature')}\n【行動呼籲】把握優惠，立即到攤位選購！\n\n設計建議：主標題置頂、商品照片置中、優惠價格放大呈現；正式發布前請確認價格、日期及活動條件。`)}
+function makeSocial(){let p=val('platform'),topic=val('socialTopic'),cta=val('cta');put('socialOut',`📣 ${topic}\n\n逛夜市就是要吃點好料！我們用心準備每一份美味，期待和大家分享。\n\n${cta}！\n📍 大甲蔣公路觀光夜市\n\n#夜市美食 #在地好味道 #攤智通\n（${p}貼文示範，發布前請自行核對資訊）`)}
+function makeVideo(){let topic=val('videoTopic'),d=val('duration');put('videoOut',`影片主題：${topic}\n影片長度：${d}\n\n鏡頭 1｜0–3 秒：商品完成品近拍，字幕「夜市必吃美味！」\n鏡頭 2｜3–8 秒：食材／製作過程特寫，呈現新鮮與現做。\n鏡頭 3｜8–12 秒：起鍋、切開或拉近商品畫面，搭配環境音。\n鏡頭 4｜最後 3 秒：攤位招牌與位置，字幕「來大甲蔣公路觀光夜市找我們！」\n\n拍攝風格：${val('videoStyle')}。此為可修改的分鏡初稿。`)}
+function makeAdvice(){let q=val('question'),type=val('shopType');put('adviceOut',`針對「${type}」的問題：${q}\n\n建議先做三件事：\n1. 找出離峰時段：記錄一週各時段來客與銷售，確認真正的低峰時間。\n2. 設計低成本誘因：推出限定組合或加價購，先小規模測試，不要直接大幅降價。\n3. 經營回訪：每週固定發布新品、製作過程或顧客常見問題，並邀請顧客追蹤社群。\n\n建議追蹤：每日來客數、客單價、活動商品銷量及毛利。兩週後比較活動前後差異。\n\n以上為展示版通用建議，非即時 AI 分析。`)}
+function copyText(id){let t=document.getElementById(id).textContent;if(!t||t.includes('尚未產生')){alert('請先產生內容');return}if(navigator.clipboard){navigator.clipboard.writeText(t).then(()=>alert('已複製到剪貼簿')).catch(()=>alert('目前瀏覽器不允許複製，請手動選取文字'))}else{alert('請手動選取文字複製')}}
+function saveProfile(){put('profileMsg',`已更新本次展示內容：${val('shopName')}｜${val('market')}。此為頁面暫存示範，尚未寫入雲端資料庫。`)}
+</script></body></html>
